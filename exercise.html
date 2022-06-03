@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Français</title>
+    <script src="media/contents.js"></script>
+    <script src="media/exercise.js"></script>
+
+    <style>
+        .challenge {
+            background-color: #eee;
+            transition: 1s;
+        }
+        .correct {
+            background-color: #dfd;
+            transition: 0s;
+        }
+        .wrong {
+            background-color: #fdd;
+            transition: 0s;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>Treine seu françês</h1>
+
+        <div class="challenge" id="challenge">
+            <div id="progress">1 de 1</div>
+
+            <h2>Conjugue o verbo entre parênteses:</h2>
+
+            <div id="sentence">
+            </div>
+
+            <div><input autofocus type="text" id="response" placeholder="resposta" onkeyup="responseKeyUp(event)" /></div>
+        </div>
+
+    </main>
+</body>
+</html>
