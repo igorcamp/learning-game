@@ -7,23 +7,40 @@
     <script src="media/exercise.js"></script>
 
     <style>
+        @keyframes blink-animation {
+            0% {
+                opacity: 0%;
+            }
+            100% {
+                opacity: 100%;
+            }
+        }
         .challenge {
             background-color: #eee;
-            transition: 1s;
         }
         .correct {
-            background-color: #dfd;
-            transition: 0s;
+            background-color: #cfc;
+            animation: blink-animation 0.5s infinite;
         }
         .wrong {
-            background-color: #fdd;
-            transition: 0s;
+            background-color: #faa;
+            animation: blink-animation 0.5s infinite;
+        }
+        .hide {
+            display: none;
+        }
+        table {
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 5px;
         }
     </style>
 </head>
 <body>
     <main>
-        <h1>Treine seu françês</h1>
+        <h1 id="name">Treine seu françês</h1>
 
         <div class="challenge" id="challenge">
             <div id="progress">1 de 1</div>
@@ -33,7 +50,15 @@
             <div id="sentence">
             </div>
 
-            <div><input autofocus type="text" id="response" placeholder="resposta" onkeyup="responseKeyUp(event)" /></div>
+            <div><input autofocus maxlength="300" type="text" id="response" placeholder="resposta" onkeyup="responseKeyUp(event)" /></div>
+        </div>
+
+        <div id="results" class="results hide">
+            <h2>Resultados</h2>
+
+            <div class="message" id="results-message"></div>
+
+            <button onclick="onNextButton()">Próximo</button>
         </div>
 
     </main>
