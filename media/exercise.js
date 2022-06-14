@@ -58,7 +58,7 @@ function responseKeyUp(event) {
         ch$.classList.remove('correct');
         event.target.value = '';
         nextQuestion();
-      },500);
+      },800);
     } else {
       errorsCount++;
       errors.push([event.target.value, ...challenges[currentChallenge]]);
@@ -67,7 +67,7 @@ function responseKeyUp(event) {
         ch$.classList.remove('wrong');
         event.target.value = '';
         nextQuestion();
-      },500);
+      },800);
     }
   }
 }

@@ -11,20 +11,35 @@
             0% {
                 opacity: 0%;
             }
-            100% {
+            20% {
                 opacity: 100%;
             }
+            80% {
+                opacity: 100%;
+            }
+            100% {
+                opacity: 0%;
+            }
+        }
+        #sentence {
+            font-weight: bold;
+            margin: 50px 0 10px;
         }
         .challenge {
             background-color: #eee;
+            padding: 20px;
+        }
+        .challenge input {
+            width: 400px;
+            padding: 10px;
         }
         .correct {
             background-color: #cfc;
-            animation: blink-animation 0.5s infinite;
+            animation: blink-animation 0.8s infinite;
         }
         .wrong {
             background-color: #faa;
-            animation: blink-animation 0.5s infinite;
+            animation: blink-animation 0.8s infinite;
         }
         .hide {
             display: none;
@@ -45,7 +60,11 @@
         <div class="challenge" id="challenge">
             <div id="progress">1 de 1</div>
 
-            <h2>Conjugue o verbo entre parênteses:</h2>
+            <h2>Conjugue o verbo no tempo indicado:</h2>
+
+            <p>- Escreva o sujeito e o verbo.</p>
+            <p>- Não se esqueça dos acentos e não se preocupe com maiúsculas ou minísculas.</p>
+            <p>- Aperte o enter para confirmar.</p>
 
             <div id="sentence">
             </div>
