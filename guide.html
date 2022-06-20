@@ -3,21 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <title>Français</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="media/contents.js"></script>
     <script src="media/guide.js"></script>
 
     <style>
+        * {
+            font-family: Verdana, "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+        }
         #content {
             display: flex;
             flex-wrap: wrap;
         }
         table {
             border-collapse: collapse;
-            margin: 20px;
+            margin: 20px auto;
         }
         th, td {
             border: 1px solid black;
-            padding: 5px;
+            padding: 5px 20px;
+            text-align: center;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 5px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            text-align: center;
+            display: block;
+            background: #fff;
+            color: #555;
+            font-size: 16px;
+        }
+        button:hover {
+            background: #eee;
+        }
+
+        @media (max-width: 700px) {
+            table {
+                width: 100%;
+            }
         }
     </style>
 </head>

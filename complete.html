@@ -3,16 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <title>Français</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="media/contents.js"></script>
     <script src="media/complete.js"></script>
+
+    <style>
+        * {
+            font-family: Verdana, "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+        }
+        a {
+            text-decoration: none;
+            color: #000;
+            box-sizing: border-box;
+            padding: 10px 20px;
+            margin: 5px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            text-align: center;
+            display: inline-block;
+        }
+        table {
+            width: 200px;
+            margin: 10px auto;
+        }
+    </style>
 </head>
 <body>
     <main>
         <h1>Présent</h1>
 
-        <h2>Complete</h2>
-
-        <h3>Parabéns, você completou este módulo.</h3>
+        <h2>Parabéns, você completou este módulo.</h2>
 
         <div id="scores">
             <table>
@@ -23,6 +43,11 @@
                 <tr>
                     <td>Erros</td>
                     <td id="errors-count">0</td>
+                </tr>
+                <tr><td>&nbsp;</td></tr>
+                <tr>
+                    <td>Pontuação</td>
+                    <td id="score"></td>
                 </tr>
             </table>
         </div>

@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Français</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="media/contents.js"></script>
     <script src="media/exercise.js"></script>
 
@@ -21,6 +22,12 @@
                 opacity: 0%;
             }
         }
+        * {
+            font-family: Verdana, "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+        }
+        body {
+            margin: 0;
+        }
         #sentence {
             font-weight: bold;
             margin: 50px 0 10px;
@@ -32,6 +39,7 @@
         .challenge input {
             width: 400px;
             padding: 10px;
+            box-sizing: border-box;
         }
         .correct {
             background-color: #cfc;
@@ -50,6 +58,12 @@
         th, td {
             border: 1px solid black;
             padding: 5px;
+        }
+
+        @media (max-width: 800px) {
+            .challenge input {
+                width: 100%;
+            }
         }
     </style>
 </head>

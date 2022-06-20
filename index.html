@@ -3,22 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <title>Français</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <style>
         * {
             font-family: Verdana, "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
         }
+        body {
+            margin: 0 10px;
+        }
         a {
             text-decoration: none;
-            display: inline-block;
-            padding: 10px;
-            margin: 5px;
             color: #000;
+            display: inline-block;
+            vertical-align: middle;
+            line-height: normal;
+        }
+        .links {
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+        .link {
+            box-sizing: border-box;
+            width: 150px;
+            height: 100px;
+            line-height: 100px;
+            padding: 0 10px;
+            margin: 5px;
             border: 1px solid #ddd;
             border-radius: 5px;
+            text-align: center;
+            display: block;
         }
-        a:hover {
+        .link-long {
+            height: 200px;
+            line-height: 200px;
+        }
+        .link:hover {
             background: #eee;
+        }
+        .link[disabled] {
+            pointer-events: none;
+            background: #ccc;
+        }
+        .link[disabled] > a {
+            color: #777;
+        }
+
+        @media (max-width: 700px) {
+            .link {
+                width: calc(50% - 10.1px);
+            }
         }
     </style>
 </head>
@@ -28,21 +64,28 @@
 
         <h2>Clique em qual módulo quer praticar</h2>
 
-        <a href="route.html?route=present.guide1">Présent</a><br>
-        <a href="route.html?route=passecompose.guide1">Passé Composé</a><br>
-        <a href="present.html">Imparfait</a><br>
-        <a href="present.html">Plus-que-parfait</a><br>
-        <a href="present.html">Future Simple</a><br>
-        <a href="present.html">Conditionnel Présent</a><br>
-        <a href="present.html">Subjonctif Présent</a><br>
-        <br>
-        <a href="route.html?route=participepasse.guide1">Participe passé</a><br>
-        <a href="present.html">Revisão dos tempos verbais</a><br>
+        <div class="links">
+            <div class="link"><a href="route.html?route=present.guide1">Présent</a></div>
+            <div class="link"><a href="route.html?route=passecompose.guide1">Passé Composé</a></div>
+            <div class="link" disabled><a href="present.html">Imparfait</a></div>
+            <div class="link" disabled><a href="present.html">Plus-que-parfait</a></div>
+            <div class="link" disabled><a href="present.html">Future Simple</a></div>
+            <div class="link" disabled><a href="present.html">Conditionnel Présent</a></div>
+            <div class="link" disabled><a href="present.html">Subjonctif Présent</a></div>
+        </div>
+
+        <div class="links">
+            <div class="link"><a href="route.html?route=participepasse.guide1">Participe passé</a></div>
+            <div class="link" disabled><a href="present.html">Revisão dos tempos verbais</a></div>
+        </div>
 
         <h2>Desafios</h2>
-        <a href="route.html?route=desafio1.exercise1">être et avoir - présent, passé composé, imparfait et plus-que-parfait (72 perguntas)</a><br>
-        <a href="route.html?route=desafio2.exercise1">10 verbos mais comuns - présent, passé composé, imparfait,
-            plus-que-parfait, future simple, conditionnel présent et subjonctif présent (420 perguntas)</a><br>
+
+        <div class="links">
+            <div class="link link-long"><a href="route.html?route=desafio1.exercise1">
+                être et avoir - présent, passé composé, imparfait et plus-que-parfait (72 perguntas)</a></div>
+            <div class="link link-long" disabled><a href="route.html?route=desafio2.exercise1">10 verbos mais comuns - todos os tempos (420 perguntas)</a></div>
+        </div>
 
     </main>
 </body>
