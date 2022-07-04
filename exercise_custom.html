@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Français</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="media/verbs.js"></script>
+    <script src="media/exercise_custom.js"></script>
+
+    <style>
+        @keyframes blink-animation {
+            0% {
+                opacity: 0%;
+            }
+            20% {
+                opacity: 100%;
+            }
+            80% {
+                opacity: 100%;
+            }
+            100% {
+                opacity: 0%;
+            }
+        }
+        * {
+            font-family: Verdana, "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+        }
+        body {
+            margin: 0;
+        }
+        h1, h2 {
+            margin: 10px 0;
+        }
+        #sentence {
+            font-weight: bold;
+            margin: 30px 0 10px;
+        }
+        .challenge {
+            background-color: #eee;
+            padding: 20px;
+        }
+        .challenge input {
+            width: 400px;
+            padding: 8px;
+            box-sizing: border-box;
+            font-size: 18px;
+        }
+        .correct {
+            background-color: #cfc;
+            animation: blink-animation 0.8s infinite;
+        }
+        .wrong {
+            background-color: #faa;
+            animation: blink-animation 0.8s infinite;
+        }
+        .hide {
+            display: none;
+        }
+        table {
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 5px;
+        }
+        p {
+            margin: 5px 0;
+            font-size: 15px;
+        }
+        .pop-button {
+            border: 1px solid #555;
+            display: inline-block;
+            margin: 5px;
+            padding: 5px;
+            cursor: pointer;
+        }
+        .pop-button.active {
+            border: 1px solid #555;
+            background: #aaf;
+        }
+        button {
+            color: #000;
+            box-sizing: border-box;
+            padding: 10px 20px;
+            margin: 5px;
+            border: 1px solid #aaa;
+            border-radius: 5px;
+            text-align: center;
+            display: inline-block;
+            background: #fff;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        @media (max-width: 800px) {
+            .challenge input {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1 id="name">Treine seu françês</h1>
+
+        <div class="configure" id="configure">
+            <h2>Selecione os verbos e tempos que quer treinar:</h2>
+
+            <h3>verbos</h3>
+            <div id="verbs"></div>
+            <h3>tempos</h3>
+            <div id="tenses"></div>
+            <button onclick="configComplete()">Começar</button>
+        </div>
+
+        <div class="challenge hide" id="challenge">
+            <div id="progress">1 de 1</div>
+
+            <h2>Conjugue o verbo no tempo indicado:</h2>
+
+            <p>- Escreva o sujeito e o verbo.</p>
+            <p>- Não se esqueça dos acentos e não se preocupe com maiúsculas ou minísculas.</p>
+            <p>- Aperte o enter para confirmar.</p>
+
+            <div id="sentence">
+            </div>
+
+            <div><input autofocus maxlength="300" type="text" id="response" placeholder="resposta" onkeyup="responseKeyUp(event)" /></div>
+        </div>
+
+        <div id="results" class="results hide">
+            <h2>Resultados</h2>
+
+            <div class="message" id="results-message"></div>
+
+            <button onclick="onNextButton()">Próximo</button>
+        </div>
+
+    </main>
+</body>
+</html>
