@@ -11,8 +11,6 @@ function init() {
 
   exercisesCount = parseInt(params.get('exercises')) || 0;
   errorsCount = parseInt(params.get('errors')) || 0;
-  shuffle(challenges);
-  showChallenge();
 }
 
 let tenses = [];
@@ -60,9 +58,34 @@ function configComplete() {
       challenges = [...challenges, ...verbs.verbsList[v][t]];
     }
   }
-  shuffle(challenges);
   document.getElementById('configure').classList.add('hide');
+  if (document.getElementById('show-guide').checked){
+    showGuide();
+  } else {
+    document.getElementById('challenge').classList.remove('hide');
+    shuffle(challenges);
+    showChallenge();
+  }
+}
+
+function showGuide() {
+  document.getElementById('guide').classList.remove('hide');
+
+  let d = "";
+
+  d += "<table><tr><th>verbo</th><th>resposta</th></tr>";
+  for (let c of challenges) {
+    d += "<tr><td>" + c[0] + "</td><td>" + c[1] + "</td>";
+  }
+  d += "</table>";
+
+  document.getElementById('guide-content').innerHTML = d;
+}
+
+function endGuide() {
+  document.getElementById('guide').classList.add('hide');
   document.getElementById('challenge').classList.remove('hide');
+  shuffle(challenges);
   showChallenge();
 }
 

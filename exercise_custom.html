@@ -78,6 +78,9 @@
             border: 1px solid #555;
             background: #aaf;
         }
+        .configure, .guide {
+            padding: 10px;
+        }
         button {
             color: #000;
             box-sizing: border-box;
@@ -110,7 +113,20 @@
             <div id="verbs"></div>
             <h3>tempos</h3>
             <div id="tenses"></div>
+            <h3>outras configurações</h3>
+            <div id="other-settings">
+                <input type="checkbox" id="show-guide" checked><label for="show-guide">Mostrar Guia</label>
+            </div>
+            <br>
             <button onclick="configComplete()">Começar</button>
+        </div>
+
+        <div id="guide" class="guide hide">
+            <h2>Guia</h2>
+
+            <div class="guide-content" id="guide-content"></div>
+
+            <button onclick="endGuide()">Próximo</button>
         </div>
 
         <div class="challenge hide" id="challenge">
