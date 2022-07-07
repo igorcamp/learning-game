@@ -165,3 +165,18 @@ function nextQuestion() {
 function onNextButton() {
   window.location.href = `complete.html?exercises=${exercisesCount}&errors=${errorsCount}`;
 }
+
+function restartCustom() {
+  currentChallenge = 0;
+  exercisesCount = 0;
+  errors = [];
+  document.getElementById('response').value = "";
+  document.getElementById('challenge').classList.add('hide');
+  document.getElementById('results').classList.add('hide');
+  document.getElementById('configure').classList.remove('hide');
+}
+function addChar(char) {
+  let r$ = document.getElementById('response');
+  r$.value = r$.value + char;
+  r$.focus();
+}

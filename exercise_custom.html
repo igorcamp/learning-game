@@ -64,8 +64,11 @@
             padding: 5px;
         }
         p {
-            margin: 5px 0;
-            font-size: 15px;
+            margin: 2px 0;
+            font-size: 12px;
+        }
+        #progress {
+            font-size: 10px;
         }
         .pop-button {
             border: 1px solid #555;
@@ -80,6 +83,15 @@
         }
         .configure, .guide {
             padding: 10px;
+        }
+        .char-buttons {
+            margin: 2px 0;
+            display: flex;
+        }
+        .char-button {
+            padding: 10px;
+            margin: 2px 0;
+            border-radius: 2px;
         }
         button {
             color: #000;
@@ -104,8 +116,6 @@
 </head>
 <body>
     <main>
-        <h1 id="name">Treine seu françês</h1>
-
         <div class="configure" id="configure">
             <h2>Selecione os verbos e tempos que quer treinar:</h2>
 
@@ -132,7 +142,7 @@
         <div class="challenge hide" id="challenge">
             <div id="progress">1 de 1</div>
 
-            <h2>Conjugue o verbo no tempo indicado:</h2>
+            <h3>Conjugue o verbo no tempo indicado:</h3>
 
             <p>- Escreva o sujeito e o verbo.</p>
             <p>- Não se esqueça dos acentos e não se preocupe com maiúsculas ou minísculas.</p>
@@ -142,6 +152,13 @@
             </div>
 
             <div><input autofocus maxlength="300" type="text" id="response" placeholder="resposta" onkeyup="responseKeyUp(event)" /></div>
+            <div class="char-buttons">
+                <button class="char-button" onclick="addChar('\'')">'</button>
+                <button class="char-button" onclick="addChar('é')">é</button>
+                <button class="char-button" onclick="addChar('è')">è</button>
+                <button class="char-button" onclick="addChar('ê')">ê</button>
+            </div>
+            <button onclick="restartCustom()">Recomeçar</button>
         </div>
 
         <div id="results" class="results hide">
@@ -149,6 +166,7 @@
 
             <div class="message" id="results-message"></div>
 
+            <button onclick="restartCustom()">Recomeçar</button>
             <button onclick="onNextButton()">Próximo</button>
         </div>
 
