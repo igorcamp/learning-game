@@ -2,12 +2,12 @@
 // previously cached resources to be updated from the network.
 const cacheName = 'francais-learning-v1';
 const contentToCache = [
-  '/index.html',
-  '/complete.html',
-  '/exercise_custom.html',
-  '/media/verbs.js',
-  '/media/exercise_custom.js',
-  '/media/complete.js',
+  '/learning-game/index.html',
+  '/learning-game/complete.html',
+  '/learning-game/exercise_custom.html',
+  '/learning-game/media/verbs.js',
+  '/learning-game/media/exercise_custom.js',
+  '/learning-game/media/complete.js',
 ];
 
 self.addEventListener('install', (e) => {
