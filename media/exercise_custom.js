@@ -5,6 +5,9 @@ let currentChallenge = 0;
 let errors = [];
 
 function init() {
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('service-worker.js');
+  }
   let params = new URLSearchParams(window.location.search);
 
   showConf();
@@ -170,6 +173,9 @@ function restartCustom() {
   currentChallenge = 0;
   exercisesCount = 0;
   errors = [];
+  tenses = [];
+  selectedVerbs = [];
+  document.querySelectorAll('.pop-button.active').forEach(b => b.classList.remove('active'));
   document.getElementById('response').value = "";
   document.getElementById('challenge').classList.add('hide');
   document.getElementById('results').classList.add('hide');
